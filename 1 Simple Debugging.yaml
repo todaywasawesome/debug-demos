@@ -1,3 +1,4 @@
+# This pipeline uses all alpine images. Try adding a breakpoint before the first step and running commands like `ls` to explore the volume.
 version: '1.0'
 stages:
   - "Stage 1"
