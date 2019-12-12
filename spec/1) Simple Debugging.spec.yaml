@@ -1,0 +1,141 @@
+version: '1.0'
+kind: pipeline
+metadata:
+  name: Debug Examples/1) Simple Debugging
+  project: Debug Examples
+  projectId: 5df029ac18e5d05a4d2a52d1
+  revision: 12
+  accountId: 581b713980389a0100d1e790
+  created_at: '2019-12-10T23:27:00.229Z'
+  updated_at: '2019-12-12T18:08:59.469Z'
+  originalYamlString: |-
+    version: '1.0'
+    stages:
+      - "Stage 1"
+      - "Stage 2"
+      - "Stage 3"
+    steps:
+      one:
+        title: One Step
+        stage: "Stage 1"
+        image: alpine
+        commands:
+          - echo '******* hello world *******'
+      two:
+        title: Two Step
+        stage: "Stage 1"
+        image: alpine
+        commands:
+          - echo '******* hello world *******'
+      three:
+        title: Three Step
+        stage: "Stage 1"
+        image: alpine
+        commands:
+          - echo '******* hello world *******'
+          
+      four:
+        type: parallel
+        stage: "Stage 2"
+        steps:
+        
+            red:
+              title: Red Step
+              image: alpine
+              commands:
+                - echo '******* hello world *******'
+                
+            green:
+              title: Green Step
+              image: alpine
+              commands:
+                - echo '******* hello world *******'
+                
+            blue:
+              title: Blue step
+              image: alpine
+              commands:
+                - echo '******* hello world *******'
+                
+      final_stage:
+        title: Final Stage
+        stage: "Stage 3"
+        image: alpine
+        commands:
+          - echo '******* hello world *******'   
+  deprecate: {}
+  labels:
+    tags: []
+  id: 5df029c4158ef22a961fe50e
+spec:
+  triggers: []
+  steps:
+    one:
+      title: One Step
+      stage: Stage 1
+      image: alpine
+      commands:
+        - echo '******* hello world *******'
+    two:
+      title: Two Step
+      stage: Stage 1
+      image: alpine
+      commands:
+        - echo '******* hello world *******'
+    three:
+      title: Three Step
+      stage: Stage 1
+      image: alpine
+      commands:
+        - echo '******* hello world *******'
+    four:
+      type: parallel
+      stage: Stage 2
+      steps:
+        red:
+          title: Red Step
+          image: alpine
+          commands:
+            - echo '******* hello world *******'
+        green:
+          title: Green Step
+          image: alpine
+          commands:
+            - echo '******* hello world *******'
+        blue:
+          title: Blue step
+          image: alpine
+          commands:
+            - echo '******* hello world *******'
+    final_stage:
+      title: Final Stage
+      stage: Stage 3
+      image: alpine
+      commands:
+        - echo '******* hello world *******'
+  stages:
+    - Stage 1
+    - Stage 2
+    - Stage 3
+  variables: []
+  contexts: []
+  terminationPolicy: []
+  externalResources: []
+  debug:
+    steps:
+      one:
+        phases:
+          before: false
+          override: true
+          after: false
+      final_stage:
+        phases:
+          before: true
+          override: true
+          after: false
+      two:
+        phases:
+          before: true
+          override: true
+          after: false
+
