@@ -1,4 +1,4 @@
-# Debug pipeline examaples for Codefresh
+# Debug pipeline examples for Codefresh
 
 * [Watch Replay](https://codefresh.io/events/make-devops-suck-less-worlds-first-ci-cd-live-debugger-codefresh/)
 * [Documentation](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/debugging-pipelines/)
